@@ -1,0 +1,31 @@
+languageCode: "en-us"
+baseUrl: "https://blog.tylerauer.com"
+title: "Mountains of Code"
+theme: "auer"
+publishDir: "docs" #docs is the deployment folder for GitHub Pages
+paginate: 20
+# googleAnalytics: UA-123-45
+enableRobotsTXT: true
+
+menu:
+  main:
+    - identifier: archive
+      name: Archive
+      title: Archive
+      url: /posts/
+      weight: 0
+
+params:
+  author: "Tyler Auer"
+  description: "A blog about code"
+  images:
+    - images/og-featured.png # relative path to "static" directory
+  customCSS:
+    - css/my.css # relative path to "static" directory
+  dateFormat: "2006-01-02"
+  paginationSinglePost: true
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # enable raw HTML in Markdown
