@@ -13,8 +13,8 @@ categories = [
     "themes",
     "syntax",
 ]
-aliases = ["migrate-from-jekyl"]
 favorite = true
+draft = true
 +++
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
@@ -24,12 +24,17 @@ This article offers a sample of basic Markdown syntax that can be used in Hugo c
 
 The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
 
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
+# H1 - Heading 1
+
+## H2 - Heading 2
+
+### H3 - Heading 3
+
+#### H4 - Heading 4
+
+##### H5 - Heading 5
+
+###### H6 - Heading 6
 
 ## Paragraph
 
@@ -58,23 +63,22 @@ The blockquote element represents content that is quoted from another source, op
 
 Tables aren't part of the core Markdown spec, but Hugo supports supports them out-of-the-box.
 
-   Name | Age
---------|------
-    Bob | 27
-  Alice | 23
+   | Name  | Age |
+   | ----- | --- |
+   | Bob   | 27  |
+   | Alice | 23  |
 
 #### Inline Markdown within tables
 
-| Inline&nbsp;&nbsp;&nbsp;     | Markdown&nbsp;&nbsp;&nbsp;  | In&nbsp;&nbsp;&nbsp;                | Table      |
-| ---------- | --------- | ----------------- | ---------- |
-| *italics*  | **bold**  | ~~strikethrough~~&nbsp;&nbsp;&nbsp; | `code`     |
+| Inline&nbsp;&nbsp;&nbsp; | Markdown&nbsp;&nbsp;&nbsp; | In&nbsp;&nbsp;&nbsp;                | Table  |
+| ------------------------ | -------------------------- | ----------------------------------- | ------ |
+| *italics*                | **bold**                   | ~~strikethrough~~&nbsp;&nbsp;&nbsp; | `code` |
 
 ## Code Blocks
 
 #### Code block with backticks
 
-```
-html
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,6 +90,7 @@ html
 </body>
 </html>
 ```
+
 #### Code block indented with four spaces
 
     <!DOCTYPE html>

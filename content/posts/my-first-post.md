@@ -8,6 +8,8 @@ draft: false
 
 This is a demo post for my blog.
 
+<!--more-->
+
 ```javascript
 const sampleJS = () => {
   console.log("display some pretty code, please)
