@@ -1,3 +1,4 @@
+// COLORS
 $color-grey-dark-1: #454545;
 
 $color-grey-light-1: #cecece;
@@ -7,6 +8,13 @@ $color-highlight-1: #ff00b7;
 $color-highlight-1-dark: #83005e;
 $color-highlight-2: #0088ff;
 
+// Breakpoints (em = width in px / 16)
+
+$bp-largest: 56.25em; // 900px
+$bp-large: 49.375em; // 790px
+$bp-medium: 43.75em; // 700px
+$bp-small: 32.8125em; // 525px
+$bp-xsmall: 25em; // 400px
 * {
   margin: 0;
   padding: 0;
@@ -32,4 +40,16 @@ body {
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; // sharp fonts in firefox on macs
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 1.5rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 1.2rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 1rem;
+  }
 }

@@ -1,4 +1,5 @@
 $footer-height: 20rem;
+$footer-height-medium-screen: 15rem;
 
 .container {
   position: relative;
@@ -7,6 +8,18 @@ $footer-height: 20rem;
   margin: 0 auto;
   // ensures content doesn't hide behind footer
   padding-bottom: $footer-height;
+
+  @media only screen and (max-width: $bp-largest) {
+    padding: 0 2rem $footer-height 2rem;
+  }
+
+  @media only screen and (max-width: $bp-largest) {
+    padding: 0 2rem $footer-height-medium-screen 2rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 0 1rem $footer-height-medium-screen 1rem;
+  }
 }
 
 header {
@@ -15,6 +28,14 @@ header {
   align-items: center;
   padding-top: 3rem;
   padding-bottom: 10rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    padding-bottom: 5rem;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    flex-direction: column;
+  }
 }
 
 footer {
@@ -22,7 +43,19 @@ footer {
   justify-content: space-between;
   align-items: center;
   position: absolute;
+  left: 0;
   bottom: 0;
   height: $footer-height;
   color: white;
+
+  @media only screen and (max-width: $bp-largest) {
+    padding: 0 2rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+    height: $footer-height-medium-screen;
+    padding: 2rem 0;
+    text-align: center;
+  }
 }

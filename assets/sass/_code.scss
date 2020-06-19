@@ -16,12 +16,6 @@ p code {
   border-radius: 3px;
 }
 
-// p code {
-//   background-color: $color-grey-dark-1;
-//   color: white;
-//   padding: 0.4rem 0.8rem;
-// }
-
 .highlight {
   margin: 1rem 0;
   border-radius: 8px;
@@ -49,6 +43,14 @@ p code {
     //The code only
     & pre {
     }
+  }
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 1.4rem;
+  }
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 1.3rem;
   }
 }
 
