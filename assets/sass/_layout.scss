@@ -1,12 +1,8 @@
 $footer-height: 20rem;
 
-.container-site {
+.container {
   position: relative;
   min-height: 100vh;
-}
-
-// Everything but the footer
-.container-content {
   max-width: 85rem;
   margin: 0 auto;
   // ensures content doesn't hide behind footer
@@ -21,13 +17,10 @@ header {
 
 footer {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   position: absolute;
   bottom: 0;
   height: $footer-height;
-  width: 100%;
-  align-items: center;
-  background-color: $color-grey-dark-1;
   color: white;
 }

@@ -12,29 +12,39 @@
 </head>
 
 <body>
-  <div class="container-site">
-    <div class="container-content">
-      <header class="header">
-        <a href="/" class="header__logo">
-          MOUNTAINS of CODE
-        </a>
-        <nav class="header__nav">
-          <a class="header__link">Tech</a>
-          <a class="header__link">Categories</a>
-          <a href="https://tylerauer.com" class="header__link header__link--me">Me</a>
-        </nav>
-      </header>
+  <div class="container">
 
-      <main>
-        {{ block "main" . }}
+    <header class="header">
+      <a href="/" class="header__logo">
+        MOUNTAINS of CODE
+      </a>
+      <nav class="header__nav">
+        <a class="header__link">Tech</a>
+        <a class="header__link">Categories</a>
+        <a href="https://tylerauer.com" class="header__link header__link--me">Me</a>
+      </nav>
+    </header>
 
-        {{end}}
-      </main>
+    <main>
+      {{ block "main" . }}
 
-    </div>
+      {{end}}
+    </main>
+
+
     <footer class="footer">
 
+      <div class="footer__text">
+        <div class="footer__logo">
+          MOUNTAINS of CODE
+        </div>
+        <div class="footer__copy">
+          Built by Tyler Auer using Hugo &copy; 2020.
+        </div>
+      </div>
+
       <div class="footer__social">
+
         <a href="https://twitter.com/TylerAuer">
           <div class="footer__icon-box">
             <svg class="footer__icon">
@@ -76,16 +86,6 @@
         </a>
 
       </div>
-
-      <div class="footer__text">
-        <div class="footer__logo">
-          MOUNTAINS of CODE
-        </div>
-        <div class="footer__copy">
-          Built by Tyler Auer using Hugo &copy; 2020.
-        </div>
-      </div>
-
     </footer>
   </div>
 </body>
