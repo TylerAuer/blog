@@ -1,0 +1,33 @@
+$color-grey-dark-1: #454545;
+
+$color-highlight-1: #ff00b7;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// ensures that all elements inherit the border-box setting for box sizing
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  color: $color-grey-dark-1;
+  line-height: 1.5;
+  font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+}

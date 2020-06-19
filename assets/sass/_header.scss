@@ -1,0 +1,24 @@
+.header {
+  margin: 5rem 0;
+
+  &__logo {
+    font-size: 4rem;
+    // font-weight: 700;
+    text-decoration: none;
+    color: black;
+    //text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+
+  &__nav {
+    display: flex;
+    font-size: 2rem;
+
+    :not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__link {
+  }
+}

@@ -1,0 +1,32 @@
+$footer-height: 15rem;
+
+.body {
+  position: relative;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  // ensures content doesn't hide behind footer
+  margin-bottom: $footer-height;
+  padding-bottom: 5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: $color-grey-dark-1;
+  color: white;
+  height: $footer-height;
+}
