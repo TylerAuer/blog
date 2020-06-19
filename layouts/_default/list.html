@@ -1,0 +1,24 @@
+{{ define "main" }}
+
+<!-- Shows the content of the _index.md files in content directory. -->
+{{.Content}}
+
+<!-- Hugo Function that loops through all of the posts -->
+<!-- This is basically a for each loop using the template below -->
+{{ range .Pages }}
+<div class="post-list__card">
+     <div class="post-list__title">
+          <a href="{{.URL}}">{{.Title}}</a>
+     </div>
+     <div class="post-list__date">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
+     <div class="post-list__categories">{{ if .Params.categories }}<strong>Categories:</strong>
+          {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
+          {{end}}{{end}}</div>
+     <div class="post-list__tags">{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a
+               href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
+
+     <p>{{.Summary}}</p>
+</div>
+{{ end }}
+
+{{end}}
