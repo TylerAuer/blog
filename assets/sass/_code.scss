@@ -1,0 +1,88 @@
+// <kbd> and <code> that comes in paragraphs. Code in a paragraph is
+// surrounded with backticks in markdown: `this = code`
+kbd,
+code,
+pre {
+  font-family: 'Fira Mono', monospace;
+}
+
+kbd,
+p code {
+  background-color: $color-grey-dark-1;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.6rem;
+  margin: 0 2px;
+  border-radius: 3px;
+}
+
+// p code {
+//   background-color: $color-grey-dark-1;
+//   color: white;
+//   padding: 0.4rem 0.8rem;
+// }
+
+.highlight {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  margin: 1rem 0;
+
+  code {
+    background-color: transparent;
+  }
+
+  // Code blocks with line numbers or not
+  pre,
+  & > pre {
+    text-align: left;
+  }
+
+  // Code blocks with NO numbers
+  & > pre {
+    padding: 2rem;
+  }
+
+  // Code blocks with numbers
+  & > div {
+    padding: 2rem 2rem 2rem 1rem;
+    //The code only
+    & pre {
+    }
+  }
+
+  &::before {
+    content: 'file-name.js';
+    color: black;
+    text-align: center;
+    padding-left: 1rem;
+    font-family: 'Fira Mono', monospace;
+    font-style: italic;
+    height: 3rem;
+    line-height: 2;
+    border: none;
+    background-color: $color-grey-light-2;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: block;
+  }
+
+  // adds MacOs style buttons
+  &::after {
+    content: '';
+    display: inline-block;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: rgba(255, 87, 80, 1);
+    box-shadow: 2.2rem 0 0 rgba(255, 193, 47, 1),
+      4.4rem 0 0 rgba(41, 206, 66, 1);
+    border-radius: 50%;
+    z-index: 10;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+  }
+}
+
+//255,87,80,1
