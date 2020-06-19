@@ -1,0 +1,49 @@
+{{ define "main" }}
+
+<!-- Shows the content of the _index.md files in content directory. -->
+{{.Content}}
+
+<h1 class="tax__title">{{ .Title }} Posts</h1>
+{{ with .Params.tags }}
+
+
+{{ end }}
+<!-- Hugo Function that loops through all of the posts -->
+<!-- This is basically a for each loop using the template below -->
+{{ range .Pages }}
+<div class="post-list__card">
+     <div class="post-list__title-bar">
+          <h2 class="post-list__title">
+               <a href="{{.URL}}">{{.Title}}</a>
+          </h2>
+          <div class="post-list__date">
+               {{ dateFormat "January 2, 2006" .Date }}
+          </div>
+     </div>
+
+
+     <div class="post-list__descriptors">
+          {{ if .Params.categories }}
+          {{range .Params.categories}}
+          <a class="post-list__category" href='{{ "/categories/" | relLangURL }}{{ . | urlize }}'>
+               {{ . }}
+          </a>
+          {{end}}
+          {{end}}
+
+          {{ if .Params.tags }}
+          {{range .Params.tags}}
+          <a class="post-list__tag" href='{{ "/tags/" | relLangURL }}{{ . | urlize }}'>
+               {{ . }}
+          </a>
+          {{end}}
+          {{end}}
+     </div>
+     <div class="post-list__subtitle">
+          {{ .Params.subtitle}}
+     </div>
+
+</div>
+{{ end }}
+
+{{end}}
