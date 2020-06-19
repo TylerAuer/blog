@@ -35,7 +35,9 @@ The following HTML `<h1>`—`<h6>` elements represent six levels of section head
 
 ## Paragraph
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat. [^1]
+
+[^1]: This is a quite long footnote in which I wax poetically about a few different things including how to keep this sentence going without it having any real meaning or value to the reader despite its considerable length and dirth.
 
 Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
 
@@ -51,10 +53,10 @@ The blockquote element represents content that is quoted from another source, op
 #### Blockquote with attribution
 
 > Don't communicate by sharing memory, share memory by communicating.</p>
-> — <cite>Rob Pike[^1]</cite>
+> — <cite>Rob Pike [^2]</cite>
 
 
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+[^2]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 
 ## Tables
 
@@ -73,34 +75,6 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 
 ## Code Blocks
 
-#### Code block with backticks
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Example HTML5 Document</title>
-</head>
-<body>
-  <p>Test</p>
-</body>
-</html>
-```
-
-#### Code block indented with four spaces
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <title>Example HTML5 Document</title>
-    </head>
-    <body>
-      <p>Test</p>
-    </body>
-    </html>
-
 #### Code block with Hugo's internal highlight shortcode
 {{< highlight html >}}
 <!DOCTYPE html>
@@ -115,6 +89,31 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 </html>
 {{< /highlight >}}
 
+<br>
+
+{{< highlight javascript >}}
+var randomColor = Math.floor(Math.random()*16777215).toString(16); // exactly 80
+var hi = "Hello World!";
+{{< /highlight >}}
+
+<br>
+
+{{< highlight js "linenos=table,hl_lines=6">}}
+ const password = document.querySelector('#password');
+ const message = document.querySelector('.message');
+
+ password.addEventListener('keyup', function (e) {
+     if (e.getModifierState('CapsLock')) {
+         message.textContent = 'Caps lock is on';
+     } else {
+         message.textContent = '';
+     }
+ });
+
+ var randomColor = Math.floor(Math.random()*16777215).toString(16); //exactly 80
+ {{< /highlight >}}
+
+
 ## List Types
 
 #### Ordered List
@@ -128,12 +127,13 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 * List item
 * Another item
 * And another item
+* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus massa, dapibus eget elit nec, pulvinar iaculis neque. Nam tortor justo, fermentum at turpis at, tincidunt mollis orci. Praesent neque diam, elementum sed egestas aliquam, bibendum vel leo. Sed vel nisl gravida, iaculis est vel, aliquam sem. Nunc eget tincidunt orci. Praesent urna ex, tincidunt ac justo non, accumsan convallis libero. Integer luctus massa lectus, sed pellentesque est blandit quis. Curabitur ut dolor ultricies nibh varius malesuada et et nulla. In dui orci, aliquam vitae augue mattis, sagittis accumsan tortor. Donec urna lorem, tristique in vehicula vitae, sollicitudin id odio. Quisque condimentum ullamcorper vulputate. In varius non nibh quis convallis.
 
 #### Nested list
 
 * Item
-1. First Sub-item
-2. Second Sub-item
+  1. First Sub-item
+  2. Second Sub-item
 
 ## Other Elements — abbr, sub, sup, kbd, mark
 
@@ -143,7 +143,7 @@ H<sub>2</sub>O
 
 X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 
-Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
+Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd></kbd> to end the session. Praesent urna ex, tincidunt ac justo non, accumsan convallis libero. Integer luctus massa lectus, sed pellentesque est blandit quis. Curabitur ut dolor ultricies nibh varius malesuada et et nulla. In dui orci, aliquam vitae augue mattis, `/dir1/dir2/file.md` sagittis accumsan tortor. Donec urna lorem, tristique in vehicula vitae, sollicitudin id odio. Quisque condimentum ullamcorper vulputate. In varius non nibh quis convallis.
 
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
 

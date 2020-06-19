@@ -1,3 +1,14 @@
+a,
+a:visited {
+  text-decoration: none;
+  color: $color-highlight-1;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-highlight-1-dark;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -45,4 +56,60 @@ blockquote {
   font-style: italic;
   font-size: 2.4rem;
   border-left: 2px solid $color-highlight-1;
+}
+
+table,
+th,
+td {
+  border: 1px solid $color-grey-light-1;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+table {
+  overflow-x: auto;
+}
+
+th {
+  border: 1px solid white;
+  background-color: $color-grey-light-1;
+  color: black;
+  vertical-align: middle;
+  font-size: 1.8rem;
+}
+
+ol,
+ul {
+  list-style-position: inside;
+  margin-left: 2rem;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+li:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+section .footnotes {
+  // Markdown automatically inserts and hr
+  hr {
+    margin-bottom: 3rem;
+  }
+
+  // Removes the indent used in other lists
+  ol {
+    margin-left: 0;
+  }
+
+  // A little extra space
+  li:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  li p {
+    display: inline;
+  }
 }
