@@ -1,0 +1,80 @@
+.post-list {
+  &__card {
+    &:not(:first-child) {
+      margin-top: 6rem;
+    }
+  }
+
+  &__title-bar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    display: inline-block;
+    flex: 0 0 80%;
+    margin: 0;
+
+    a,
+    a:visited {
+      color: black;
+    }
+  }
+  &__date {
+    font-style: italic;
+    //color: $color-highlight-1;
+  }
+  &__descriptors {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__tag,
+  &__category {
+    font-size: 1.4rem;
+    border-radius: 5px;
+    padding: 0.2rem 0.8rem;
+    transition: all 0.2s ease;
+    margin-top: 0.5rem;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+
+  &__category,
+  &__category:visited {
+    border: 1px solid $color-highlight-1;
+    color: $color-highlight-1;
+
+    &:hover {
+      background-color: $color-highlight-1;
+      color: white;
+    }
+  }
+
+  &__tag,
+  &__tag:visited {
+    border: 1px solid $color-grey-dark-1;
+    color: $color-grey-dark-1;
+
+    &:hover {
+      background-color: $color-grey-dark-1;
+      color: white;
+    }
+  }
+
+  &__subtitle {
+    margin-top: 2rem;
+  }
+}

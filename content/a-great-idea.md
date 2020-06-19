@@ -1,19 +1,9 @@
 ---
-title: "My First Post"
-date: 2020-06-18T11:35:58-07:00
-draft: false
+title: "A Great Idea"
+date: 2020-06-19T11:36:39-07:00
+author: "Tyler Auer"
+tags: [ "html", "css", "javascript", "jquery", "Sass", "Node", "Express"]
+categories: ["demo",]
+draft: true
 subtitle: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, officiis? Atque est exercitationem numquam temporibus beatae nisi obcaecati minus fugiat! Consequuntur magnam illum neque libero voluptate fugiat commodi, consequatur amet?"
 ---
-
-
-This is a demo post for my blog.
-
-<!--more-->
-
-## Well, can you hear me?
-
-```javascript
-const sampleJS = () => {
-  console.log("display some pretty code, please)
-}
-```

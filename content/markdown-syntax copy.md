@@ -1,22 +1,22 @@
 +++
 author = "Tyler Auer"
-title = "Styles Sample Page"
-date = "2019-03-11"
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
+title = "A post with a seriously long title. I mean, how did it get this long?"
+date = "2019-11-12"
 tags = [
-    "markdown",
     "css",
     "html",
+    "javascript",
+    "react"
 ]
 categories = [
-    "demo",
+    "What is",
 ]
 draft = true
 subtitle = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, officiis? Atque est exercitationem numquam temporibus beatae nisi obcaecati minus fugiat! Consequuntur magnam illum neque libero voluptate fugiat commodi, consequatur amet?"
 +++
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
-<!--more-->****
+<!--more-->
 
 ## Headings
 
@@ -77,6 +77,7 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 ## Code Blocks
 
 #### Code block with Hugo's internal highlight shortcode
+
 {{< highlight html >}}
 <!DOCTYPE html>
 <html lang="en">

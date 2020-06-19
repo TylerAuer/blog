@@ -31,4 +31,5 @@ body {
   line-height: 1.5;
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; // sharp fonts in firefox on macs
 }

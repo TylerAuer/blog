@@ -7,17 +7,37 @@
 <!-- This is basically a for each loop using the template below -->
 {{ range .Pages }}
 <div class="post-list__card">
-     <div class="post-list__title">
-          <a href="{{.URL}}">{{.Title}}</a>
+     <div class="post-list__title-bar">
+          <h2 class="post-list__title">
+               <a href="{{.URL}}">{{.Title}}</a>
+          </h2>
+          <div class="post-list__date">
+               {{ dateFormat "January 2, 2006" .Date }}
+          </div>
      </div>
-     <div class="post-list__date">{{ dateFormat "Monday, Jan 2, 2006" .Date }}</div>
-     <div class="post-list__categories">{{ if .Params.categories }}<strong>Categories:</strong>
-          {{range .Params.categories}}<a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">{{ . }}</a>
-          {{end}}{{end}}</div>
-     <div class="post-list__tags">{{ if .Params.tags }}<strong>Tags:</strong> {{range .Params.tags}}<a
-               href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a> {{end}}{{end}}</div>
 
-     <p>{{.Summary}}</p>
+
+     <div class="post-list__descriptors">
+          {{ if .Params.categories }}
+          {{range .Params.categories}}
+          <a class="post-list__category" href='{{ "/categories/" | relLangURL }}{{ . | urlize }}'>
+               {{ . }}
+          </a>
+          {{end}}
+          {{end}}
+
+          {{ if .Params.tags }}
+          {{range .Params.tags}}
+          <a class="post-list__tag" href='{{ "/tags/" | relLangURL }}{{ . | urlize }}'>
+               {{ . }}
+          </a>
+          {{end}}
+          {{end}}
+     </div>
+     <div class="post-list__subtitle">
+          {{ .Params.subtitle}}
+     </div>
+
 </div>
 {{ end }}
 
