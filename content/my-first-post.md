@@ -8,8 +8,6 @@ subtitle: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitation
 
 This is a demo post for my blog.
 
-<!--more-->
-
 ## Well, can you hear me?
 
 ```javascript
