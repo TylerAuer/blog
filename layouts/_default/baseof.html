@@ -8,19 +8,25 @@
   <!-- Process and load SASS as CSS -->
   {{ $styles := resources.Get "/sass/main.scss" | toCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
-  <title></title>
+
+  <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
 </head>
 
 <body>
   <div class="container">
 
-    <header class="header">
+    <br>
+    <header class=" header">
       <a href="/" class="header__logo">
         MOUNTAINS of CODE
       </a>
       <nav class="header__nav">
-        <a class="header__link">Tech</a>
-        <a class="header__link">Categories</a>
+        <a href="/tags" class='header__link {{if eq .RelPermalink "/tags/"}}header__current-page{{end}}'>
+          Tech
+        </a>
+        <a href="/categories" class='header__link {{if eq .RelPermalink "/categories/"}}header__current-page{{end}}'>
+          Categories
+        </a>
         <a href="https://tylerauer.com" class="header__link header__link--me">Me</a>
       </nav>
     </header>
@@ -88,6 +94,7 @@
       </div>
     </footer>
   </div>
+  <script> </script>
 </body>
 
 </html>

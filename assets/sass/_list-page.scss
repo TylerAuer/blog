@@ -33,45 +33,33 @@
     justify-content: left;
     align-items: center;
     flex-wrap: wrap;
+    text-transform: lowercase;
   }
 
   &__tag,
   &__category {
     font-size: 1.4rem;
-    border-radius: 5px;
-    padding: 0.2rem 0.8rem;
     transition: all 0.2s ease;
-    margin-top: 0.5rem;
+    border: 1px solid transparent;
 
     &:not(:last-child) {
       margin-right: 1rem;
     }
 
-    &:active {
-      transform: translateY(2px);
+    &:hover {
+      color: $color-highlight-2;
+      border-bottom: 1px solid $color-highlight-2;
     }
   }
 
   &__category,
   &__category:visited {
-    border: 1px solid $color-highlight-1;
     color: $color-highlight-1;
-
-    &:hover {
-      background-color: $color-highlight-1;
-      color: white;
-    }
   }
 
   &__tag,
   &__tag:visited {
-    border: 1px solid $color-grey-dark-1;
     color: $color-grey-dark-1;
-
-    &:hover {
-      background-color: $color-grey-dark-1;
-      color: white;
-    }
   }
 
   &__subtitle {
