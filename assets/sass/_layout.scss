@@ -1,15 +1,16 @@
-$footer-height: 15rem;
+$footer-height: 20rem;
 
-.body {
+.container-site {
   position: relative;
+  min-height: 100vh;
 }
 
-.container {
+// Everything but the footer
+.container-content {
   max-width: 85rem;
   margin: 0 auto;
   // ensures content doesn't hide behind footer
-  margin-bottom: $footer-height;
-  padding-bottom: 5rem;
+  padding-bottom: $footer-height;
 }
 
 header {
@@ -20,13 +21,13 @@ header {
 
 footer {
   display: flex;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  justify-content: center;
   flex-direction: column;
-  justify-content: space-evenly;
+  position: absolute;
+  bottom: 0;
+  height: $footer-height;
+  width: 100%;
   align-items: center;
   background-color: $color-grey-dark-1;
   color: white;
-  height: $footer-height;
 }

@@ -94,6 +94,7 @@ li:not(:last-child) {
 }
 
 section .footnotes {
+  margin-bottom: 3rem;
   // Markdown automatically inserts and hr
   hr {
     margin-bottom: 3rem;

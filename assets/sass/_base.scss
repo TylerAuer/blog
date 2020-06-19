@@ -22,14 +22,10 @@ $color-highlight-2: #0088ff;
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 1rem = 10px
-}
-
-html {
   font-family: 'Open Sans', sans-serif;
 }
 
 body {
-  margin: 0;
   background-color: white;
   color: $color-grey-dark-1;
   line-height: 1.5;
