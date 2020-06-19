@@ -10,7 +10,7 @@ kbd,
 p code {
   background-color: $color-grey-dark-1;
   color: white;
-  padding: 0.4rem 0.8rem;
+  padding: 0.3rem 0.8rem 0.4rem 0.8rem;
   font-size: 1.6rem;
   margin: 0 2px;
   border-radius: 3px;
@@ -23,6 +23,7 @@ p code {
 // }
 
 .highlight {
+  margin: 1rem 0;
   border-radius: 8px;
   position: relative;
   overflow: hidden;
@@ -52,6 +53,7 @@ p code {
 }
 
 .highlight-window {
+  margin: 1rem 0;
   overflow: hidden;
   position: relative;
   font-family: 'Fira Mono', monospace;
@@ -75,6 +77,7 @@ p code {
   }
 
   & .highlight {
+    margin: 0;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
   }
