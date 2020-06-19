@@ -16,10 +16,6 @@ $footer-height-medium-screen: 15rem;
   @media only screen and (max-width: $bp-largest) {
     padding: 0 2rem $footer-height-medium-screen 2rem;
   }
-
-  @media only screen and (max-width: $bp-small) {
-    padding: 0 1rem $footer-height-medium-screen 1rem;
-  }
 }
 
 header {
@@ -56,6 +52,13 @@ footer {
     flex-direction: column;
     height: $footer-height-medium-screen;
     padding: 2rem 0;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+    height: $footer-height-medium-screen;
+    padding: 3.5em 0;
     text-align: center;
   }
 }

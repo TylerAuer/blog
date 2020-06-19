@@ -28,6 +28,17 @@
     flex: 0 0 80%;
     margin: 0;
 
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 2.8rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 2.4rem;
+    }
+    @media only screen and (max-width: $bp-xsmall) {
+      font-size: 2.2rem;
+    }
+
     a,
     a:visited {
       color: black;
@@ -38,6 +49,7 @@
 
     @media only screen and (max-width: $bp-medium) {
       padding: 0.5rem 0;
+      padding-left: 2px;
     }
   }
   &__descriptors {
@@ -53,6 +65,11 @@
     font-size: 1.4rem;
     transition: all 0.2s ease;
     border: 1px solid transparent;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
 
     &:not(:last-child) {
       margin-right: 1rem;
