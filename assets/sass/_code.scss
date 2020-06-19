@@ -23,11 +23,9 @@ p code {
 // }
 
 .highlight {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
-  overflow: hidden;
+  border-radius: 8px;
   position: relative;
-  margin: 1rem 0;
+  overflow: hidden;
 
   code {
     background-color: transparent;
@@ -51,21 +49,34 @@ p code {
     & pre {
     }
   }
+}
 
-  &::before {
-    content: 'file-name.js';
-    color: black;
-    text-align: center;
-    padding-left: 1rem;
-    font-family: 'Fira Mono', monospace;
-    font-style: italic;
-    height: 3rem;
-    line-height: 2;
-    border: none;
+.highlight-window {
+  overflow: hidden;
+  position: relative;
+  font-family: 'Fira Mono', monospace;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+
+  &__bar {
     background-color: $color-grey-light-2;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__file-name {
+    font-style: italic;
+    color: black;
+    padding: 0.3rem 0;
+  }
+
+  & .highlight {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 
   // adds MacOs style buttons
@@ -84,5 +95,3 @@ p code {
     left: 1rem;
   }
 }
-
-//255,87,80,1

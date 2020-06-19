@@ -98,20 +98,22 @@ var hi = "Hello World!";
 
 <br>
 
-{{< highlight js "linenos=table,hl_lines=6">}}
- const password = document.querySelector('#password');
- const message = document.querySelector('.message');
+{{< codewindow "index.js">}}
+  {{< highlight js "linenos=true,hl_lines=6">}}
+  const password = document.querySelector('#password');
+  const message = document.querySelector('.message');
 
- password.addEventListener('keyup', function (e) {
-     if (e.getModifierState('CapsLock')) {
-         message.textContent = 'Caps lock is on';
-     } else {
-         message.textContent = '';
-     }
- });
+  password.addEventListener('keyup', function (e) {
+      if (e.getModifierState('CapsLock')) {
+          message.textContent = 'Caps lock is on';
+      } else {
+          message.textContent = '';
+      }
+  });
 
- var randomColor = Math.floor(Math.random()*16777215).toString(16); //exactly 80
- {{< /highlight >}}
+  var randomColor = Math.floor(Math.random()*16777215).toString(16); //exactly 80
+  {{< /highlight >}}
+{{< /codewindow >}}
 
 
 ## List Types
