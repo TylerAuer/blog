@@ -1,0 +1,4 @@
+baseUrl = "https://blog.tylerauer.com"
+languageCode = "en-us"
+title = "Mountains of Code | Tyler Auer"
+publishDir = "docs" #docs is the deployment folder for GitHub Pages

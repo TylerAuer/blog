@@ -1,19 +1,16 @@
 +++
-author = "Hugo Authors"
-title = "Markdown Syntax Guide"
+author = "Tyler Auer"
+title = "Styles Sample Page"
 date = "2019-03-11"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
 tags = [
     "markdown",
     "css",
     "html",
-    "themes",
 ]
 categories = [
-    "themes",
-    "syntax",
+    "demo",
 ]
-favorite = true
 draft = true
 +++
 
