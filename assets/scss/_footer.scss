@@ -1,8 +1,14 @@
 .footer {
   width: 100%;
 
-  & a {
+  & a,
+  & a:visited {
     text-decoration: none;
+    color: $color-highlight-1-faded;
+
+    &:hover {
+      color: $color-highlight-1;
+    }
   }
 
   &__text {
@@ -26,6 +32,9 @@
   &__copy {
     color: $color-grey-light-1;
   }
+
+  // &__hugo-link {
+  // }
 
   &__social {
     display: flex;
