@@ -2,7 +2,7 @@
   &__logo {
     font-size: 4rem;
     text-decoration: none;
-    color: black;
+    color: $color-highlight-1;
     letter-spacing: 4px;
 
     @media only screen and (max-width: $bp-small) {
