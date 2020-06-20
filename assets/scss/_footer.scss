@@ -1,8 +1,8 @@
 .footer {
   width: 100%;
 
-  & a,
-  & a:visited {
+  &__hugo-link,
+  &__hugo-link:visited {
     text-decoration: none;
     color: $color-highlight-1-faded;
 
