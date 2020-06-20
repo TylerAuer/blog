@@ -2,7 +2,8 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 author: "Tyler Auer"
-tags: [ "html",]
 categories: ["demo",]
+tags: [ "html",]
 draft: true
+subtitle: ""
 ---

@@ -1,40 +1,27 @@
-+++
-author = "Tyler Auer"
-title = "Styles Sample Page"
-date = "2019-03-11"
-description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
-tags = [
+---
+author: "Tyler Auer"
+title: "Styles Sample Page"
+date: "2019-03-11"
+description: "Sample of Most HTML Elements"
+tags: [
     "markdown",
     "css",
     "html",
 ]
-categories = [
+categories: [
     "demo",
 ]
-draft = true
-subtitle = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, officiis? Atque est exercitationem numquam temporibus beatae nisi obcaecati minus fugiat! Consequuntur magnam illum neque libero voluptate fugiat commodi, consequatur amet?"
-+++
+draft: false
+subtitle: "A striking deep-dive into what all of the different HTML elements look like based on the styles Tyler designed."
+---
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
-<!--more-->****
 
 ## Headings
 
 The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
 
-## H2 - Heading 2
-
-### H3 - Heading 3
-
-## An H2 Heading that is rather long and seems to go on forever onto multiple lines, am I right?
-
-#### H4 - Heading 4
-
-##### H5 - Heading 5
-
-###### H6 - Heading 6
-
-## Paragraph
+### Paragraph
 
 Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat. [^1]
 
@@ -56,7 +43,6 @@ The blockquote element represents content that is quoted from another source, op
 > Don't communicate by sharing memory, share memory by communicating.</p>
 > — <cite>Rob Pike [^2]</cite>
 
-
 [^2]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 
 ## Tables
@@ -70,9 +56,13 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 
 #### Inline Markdown within tables
 
+{{% responsivetable %}}
+
 | Inline&nbsp;&nbsp;&nbsp; | Markdown&nbsp;&nbsp;&nbsp; | In&nbsp;&nbsp;&nbsp;                | Table  |
 | ------------------------ | -------------------------- | ----------------------------------- | ------ |
 | *italics*                | **bold**                   | ~~strikethrough~~&nbsp;&nbsp;&nbsp; | `code` |
+
+{{% /responsivetable %}}
 
 ## Code Blocks
 
@@ -132,12 +122,6 @@ var hi = "Hello World!";
 * And another item
 * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tellus massa, dapibus eget elit nec, pulvinar iaculis neque. Nam tortor justo, fermentum at turpis at, tincidunt mollis orci. Praesent neque diam, elementum sed egestas aliquam, bibendum vel leo. Sed vel nisl gravida, iaculis est vel, aliquam sem. Nunc eget tincidunt orci. Praesent urna ex, tincidunt ac justo non, accumsan convallis libero. Integer luctus massa lectus, sed pellentesque est blandit quis. Curabitur ut dolor ultricies nibh varius malesuada et et nulla. In dui orci, aliquam vitae augue mattis, sagittis accumsan tortor. Donec urna lorem, tristique in vehicula vitae, sollicitudin id odio. Quisque condimentum ullamcorper vulputate. In varius non nibh quis convallis.
 
-#### Nested list
-
-* Item
-  1. First Sub-item
-  2. Second Sub-item
-
 ## Other Elements — abbr, sub, sup, kbd, mark
 
 <abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
@@ -149,4 +133,3 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 Press <kbd>CTRL</kbd> + <kbd>ALT</kbd> + <kbd>Delete</kbd></kbd> to end the session. Praesent urna ex, tincidunt ac justo non, accumsan convallis libero. Integer luctus massa lectus, sed pellentesque est blandit quis. Curabitur ut dolor ultricies nibh varius malesuada et et nulla. In dui orci, aliquam vitae augue mattis, `/dir1/dir2/file.md` sagittis accumsan tortor. Donec urna lorem, tristique in vehicula vitae, sollicitudin id odio. Quisque condimentum ullamcorper vulputate. In varius non nibh quis convallis.
 
 Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
-

@@ -8,12 +8,12 @@ pre {
 
 kbd,
 p code {
-  background-color: $color-grey-dark-1;
-  color: white;
-  padding: 0.3rem 0.8rem 0.4rem 0.8rem;
+  background-color: $color-grey-light-1;
+  color: black;
+  padding: 0.2rem 0.6rem 0.3rem 0.6rem;
   font-size: 1.6rem;
   margin: 0 2px;
-  border-radius: 3px;
+  border-radius: 2px;
 
   @media only screen and (max-width: $bp-small) {
     font-size: 1rem;
@@ -43,6 +43,14 @@ p code {
   // Code blocks with NO numbers
   & > pre {
     padding: 2rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      padding: 1.5rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 1.5rem 1.5rem 1.5rem 1rem;
+    }
   }
 
   // Code blocks with numbers
@@ -59,6 +67,10 @@ p code {
 
   @media only screen and (max-width: $bp-large) {
     font-size: 1.3rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 1.2rem;
   }
 }
 
@@ -110,8 +122,8 @@ p code {
     @media only screen and (max-width: $bp-small) {
       height: 1rem;
       width: 1rem;
-      top: 0.5rem;
-      left: 0.5rem;
+      top: 0.75rem;
+      left: 0.75rem;
       box-shadow: 1.5rem 0 0 rgba(255, 193, 47, 1),
         3rem 0 0 rgba(41, 206, 66, 1);
     }

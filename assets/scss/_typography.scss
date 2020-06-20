@@ -20,18 +20,27 @@ h6 {
   margin: 4rem 0 2rem 0;
   letter-spacing: 1px;
   text-transform: capitalize;
+  line-height: 1.2;
 
   @media only screen and (max-width: $bp-small) {
-    margin: 1rem 0 0.5rem 0;
+    margin: 1rem 0 1rem 0;
   }
 }
 
 h1 {
-  font-size: 3.2rem;
+  font-size: 3rem;
   margin-top: 0;
 
+  @media only screen and (max-width: $bp-large) {
+    font-size: 2.6rem;
+  }
+
   @media only screen and (max-width: $bp-small) {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
+  }
+
+  @media only screen and (max-width: $bp-xsmall) {
+    font-size: 2.1rem;
   }
 }
 
@@ -39,7 +48,11 @@ h2 {
   font-size: 2.8rem;
 
   @media only screen and (max-width: $bp-small) {
-    font-size: 2.4rem;
+    font-size: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-xsmall) {
+    font-size: 1.8rem;
   }
 }
 
@@ -47,25 +60,61 @@ h3 {
   font-size: 2.4rem;
 
   @media only screen and (max-width: $bp-small) {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
+  }
+
+  @media only screen and (max-width: $bp-xsmall) {
+    font-size: 1.7rem;
   }
 }
 
 h4 {
   font-size: 2rem;
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 1.7rem;
+  }
+
+  @media only screen and (max-width: $bp-xsmall) {
+    font-size: 1.6rem;
+  }
 }
 
 h5 {
   font-size: 1.8rem;
+
+  @media only screen and (max-width: $bp-xsmall) {
+    font-size: 1.5rem;
+  }
 }
 
 h6 {
   font-size: 1.6rem;
+
+  @media only screen and (max-width: $bp-xsmall) {
+    font-size: 1.4rem;
+  }
 }
 
 p {
   line-height: 1.7;
   margin: 3rem 0;
+
+  @media only screen and (max-width: $bp-large) {
+    margin: 2rem 0;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    margin: 1rem 0;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin: 1rem 0;
+  }
+
+  @media only screen and (max-width: $bp-xsmall) {
+    text-align: justify;
+  }
 }
 
 blockquote {
@@ -74,8 +123,16 @@ blockquote {
   font-size: 2.4rem;
   border-left: 2px solid $color-highlight-1;
 
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 2rem;
+  }
+
   @media only screen and (max-width: $bp-small) {
     font-size: 1.8rem;
+  }
+
+  @media only screen and (max-width: $bp-xsmall) {
+    font-size: 1.4rem;
   }
 }
 
@@ -86,6 +143,25 @@ td {
   border-collapse: collapse;
   text-align: center;
   padding: 1rem 2rem;
+  font-size: 1.6rem;
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 1.4rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 1.3rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  @media only screen and (max-width: $bp-xsmall) {
+    font-size: 1.1rem;
+  }
 }
 
 table {
@@ -97,7 +173,10 @@ th {
   background-color: $color-grey-light-1;
   color: black;
   vertical-align: middle;
-  font-size: 1.8rem;
+}
+
+.table-responsive__container {
+  overflow: auto;
 }
 
 ol,
@@ -106,7 +185,7 @@ ul {
   margin-left: 2rem;
 
   @media only screen and (max-width: $bp-small) {
-    margin-left: 0;
+    margin-left: 0.5rem;
   }
 }
 
@@ -117,6 +196,9 @@ ul {
 li:not(:last-child) {
   margin-bottom: 1.5rem;
 
+  @media only screen and (max-width: $bp-medium) {
+    margin-bottom: 1rem;
+  }
   @media only screen and (max-width: $bp-small) {
     margin-bottom: 0.5rem;
   }

@@ -6,20 +6,20 @@
     <description>Recent content in html on Mountains of Code | Tyler Auer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.tylerauer.com/tags/html/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>A post with a seriously long title. I mean, how did it get this long?</title>
-      <link>https://blog.tylerauer.com/markdown-syntax-copy/</link>
-      <pubDate>Tue, 12 Nov 2019 00:00:00 +0000</pubDate>
+      <title>Styles Sample Page</title>
+      <link>https://blog.tylerauer.com/markdown-syntax/</link>
+      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.tylerauer.com/markdown-syntax-copy/</guid>
+      <guid>https://blog.tylerauer.com/markdown-syntax/</guid>
       <description>This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
 Headings The following HTML &amp;lt;h1&amp;gt;—&amp;lt;h6&amp;gt; elements represent six levels of section headings. &amp;lt;h1&amp;gt; is the highest section level while &amp;lt;h6&amp;gt; is the lowest.
-H2 - Heading 2 H3 - Heading 3 An H2 Heading that is rather long and seems to go on forever onto multiple lines, am I right?</description>
+Paragraph Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur?</description>
     </item>
     
   </channel>

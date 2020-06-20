@@ -5,9 +5,16 @@
     color: $color-highlight-1;
     letter-spacing: 4px;
 
+    @media only screen and (max-width: $bp-large) {
+      font-size: 5rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      font-size: 4rem;
+    }
+
     @media only screen and (max-width: $bp-small) {
       font-size: 3rem;
-      letter-spacing: 4px;
     }
 
     @media only screen and (max-width: $bp-xsmall) {
@@ -23,8 +30,12 @@
     display: flex;
     font-size: 2rem;
 
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.25rem;
+    }
+
     @media only screen and (max-width: $bp-xsmall) {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
 
     :not(:last-child) {

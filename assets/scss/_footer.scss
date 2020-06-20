@@ -12,8 +12,11 @@
     font-size: 2.4rem;
     text-decoration: none;
     color: $color-grey-light-2;
-    //text-transform: uppercase;
     letter-spacing: 4px;
+
+    @media only screen and (max-width: $bp-xsmall) {
+      font-size: 1.8rem;
+    }
   }
 
   &__logo {
@@ -36,6 +39,10 @@
 
   &__icon-box {
     margin: 0 2rem;
+
+    @media only screen and (max-width: $bp-xsmall) {
+      margin: 0 1rem;
+    }
   }
 
   &__icon {
@@ -48,6 +55,11 @@
     @media only screen and (max-width: $bp-small) {
       width: 2rem;
       height: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-xsmall) {
+      width: 1.75rem;
+      height: 1.75rem;
     }
   }
 
