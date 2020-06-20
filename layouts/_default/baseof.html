@@ -9,7 +9,20 @@
   {{ $styles := resources.Get "scss/main.scss" | toCSS | resources.PostCSS | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 
-  <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
+  <!-- 
+    IF: at "/" just display the site title 
+    ELSE: concat page title with site title (if there is a page title)
+  -->
+  <title>
+    {{ if eq .RelPermalink "/"}}{{ .Site.Title }}
+    {{else}}
+    {{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}
+    {{ end }}
+  </title>
+
+  <meta name="description"
+    content='{{if .Params.subtitle}}{{.Params.subtitle}}{{else}}A blog about computers and code.{{end}}'>
+  <meta name="robots" content="index, follow">
 </head>
 
 <body>
