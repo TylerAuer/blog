@@ -118,21 +118,23 @@ p {
 }
 
 blockquote {
-  padding-left: 2.5rem;
+  padding-left: 2rem;
   font-style: italic;
   font-size: 2.4rem;
   border-left: 2px solid $color-highlight-1;
 
   @media only screen and (max-width: $bp-largest) {
+    padding-left: 1.5rem;
     font-size: 2rem;
   }
 
   @media only screen and (max-width: $bp-small) {
-    font-size: 1.8rem;
+    padding-left: 1rem;
+    font-size: 1.5rem;
   }
 
   @media only screen and (max-width: $bp-xsmall) {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
