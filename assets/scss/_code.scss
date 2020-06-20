@@ -25,15 +25,18 @@ p code {
   margin: 1rem 0;
   border-radius: 8px;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
+  width: 100%;
 
   code {
-    background-color: transparent;
+    //background-color: transparent;
+    width: 100%;
   }
 
   // Code blocks with line numbers or not
   pre,
   & > pre {
+    overflow: auto;
     text-align: left;
   }
 
