@@ -208,10 +208,11 @@ li:not(:last-child) {
 }
 
 section .footnotes {
+  margin-top: 3rem;
   margin-bottom: 3rem;
   // Markdown automatically inserts and hr
   hr {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   // Removes the indent used in other lists
@@ -221,7 +222,7 @@ section .footnotes {
 
   // A little extra space
   li:not(:last-child) {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   li p {
