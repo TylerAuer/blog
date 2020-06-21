@@ -6,53 +6,17 @@
     <description>Recent content in Tags on Mountains of Code - Tyler Auer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jun 2020 08:03:32 -0700</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2020 20:10:05 -0700</lastBuildDate>
     
 	<atom:link href="https://blog.tylerauer.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>JavaScript</title>
-      <link>https://blog.tylerauer.com/tags/javascript/</link>
-      <pubDate>Sat, 20 Jun 2020 08:03:32 -0700</pubDate>
+      <title>Git</title>
+      <link>https://blog.tylerauer.com/tags/git/</link>
+      <pubDate>Sat, 20 Jun 2020 20:10:05 -0700</pubDate>
       
-      <guid>https://blog.tylerauer.com/tags/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JQuery</title>
-      <link>https://blog.tylerauer.com/tags/jquery/</link>
-      <pubDate>Sat, 20 Jun 2020 08:03:32 -0700</pubDate>
-      
-      <guid>https://blog.tylerauer.com/tags/jquery/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>css</title>
-      <link>https://blog.tylerauer.com/tags/css/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tylerauer.com/tags/css/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>html</title>
-      <link>https://blog.tylerauer.com/tags/html/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tylerauer.com/tags/html/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>markdown</title>
-      <link>https://blog.tylerauer.com/tags/markdown/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.tylerauer.com/tags/markdown/</guid>
+      <guid>https://blog.tylerauer.com/tags/git/</guid>
       <description></description>
     </item>
     

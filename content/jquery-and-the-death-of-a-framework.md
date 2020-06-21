@@ -4,7 +4,7 @@ date: 2020-06-20T08:03:32-07:00
 author: "Tyler Auer"
 categories: ["Story",]
 tags: [ "JQuery", "JavaScript"]
-draft: false
+draft: true
 subtitle: "The lifecycle of a web framework"
 ---
 
