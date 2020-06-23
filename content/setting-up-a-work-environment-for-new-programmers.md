@@ -4,8 +4,8 @@ date: 2020-06-21T10:25:06-07:00
 author: "Tyler Auer"
 categories: ["demo",]
 tags: [ "html",]
-draft: false
-subtitle: "This is a test of the automatic deployment"
+draft: true
+subtitle: ""
 ---
 
 ## Work Environment
