@@ -2,7 +2,7 @@
 title: "A List of Tools for Beginner Programmers"
 date: 2020-06-20T20:10:05-07:00
 author: "Tyler Auer"
-categories: ["List",]
+categories: ["Tools",]
 tags: [ "Git", "Command Line", "Visual Studio Code", "Emmet", "Alfred", "Pock"]
 draft: false
 subtitle: "A growing collection of tools new programmers should use as they move from beginner to pro."
