@@ -94,4 +94,4 @@ The first thing to do is to install [iTerm2](https://www.iterm2.com/) which is s
 
 ## Pock (if your Mac has a Touch Bar)
 
-If you've got a Touch Bar, you probably find it to be (mostly) useless. [Pock](https://pock.dev/) is a free app that lets you customize your Touch Bar and make it useful.
+If you've got a Touch Bar, you probably find it to be useless. [Pock](https://pock.dev/) is a free app that lets you customize your Touch Bar and make it useful.
