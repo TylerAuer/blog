@@ -1,5 +1,7 @@
 .title {
-  &__dateline {
+  &__dateline--update {
+    border-left: 2px solid $color-highlight-1;
+    padding-left: 1rem;
   }
 
   &__date {
