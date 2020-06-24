@@ -2,3 +2,14 @@
   color: $color-highlight-1;
   font-style: italic;
 }
+
+.note-box {
+  padding: 1rem 3rem;
+  box-shadow: 2px 2px 0 $color-highlight-4, 4px 4px 0 $color-highlight-2;
+  border: 2px solid $color-highlight-1;
+  //border-bottom: 2px solid $color-highlight-4;
+  //background-color: $color-highlight-4-faded;
+  color: black;
+  margin: 0 auto;
+  width: 75%;
+}

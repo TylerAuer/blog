@@ -7,7 +7,8 @@ pre {
 }
 
 kbd,
-p code {
+p code,
+ul code {
   background-color: $color-grey-light-1;
   color: black;
   padding: 0.2rem 0.6rem 0.3rem 0.6rem;
