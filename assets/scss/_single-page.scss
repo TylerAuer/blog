@@ -1,6 +1,25 @@
-.title__date {
-  color: $color-highlight-1;
-  font-style: italic;
+.title {
+  &__dateline {
+  }
+
+  &__date {
+    color: $color-highlight-1;
+    font-style: italic;
+    display: inline-block;
+  }
+
+  &__date--update {
+    color: $color-highlight-1;
+    font-style: italic;
+    display: inline-block;
+  }
+
+  &__updated {
+    display: inline-block;
+    font-style: italic;
+    padding-left: 0.5rem;
+    color: $color-grey-medium-1;
+  }
 }
 
 .note-box {

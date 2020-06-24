@@ -2,7 +2,18 @@
 
 <section class="title-section">
      <h1>{{.Title}}</h1>
-     <div class="title__date">{{ dateFormat "January 2, 2006" .Date }}</div>
+
+     {{ if isset .Params "last_update" }}
+     <div class="title__dateline--update">
+          <div class="title__date--update">{{ dateFormat "January 2, 2006" .Date }}</div>
+          <div class="title__updated">Updated: {{ dateFormat "January 2, 2006" .Params.last_update }}
+          </div>
+
+          {{ else }}
+          <div class="title__dateline">
+               <div class="title__date">{{ dateFormat "January 2, 2006" .Date }}</div>
+          </div>
+          {{ end }}
 </section>
 <section class="content-body">
 
