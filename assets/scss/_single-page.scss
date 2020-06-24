@@ -12,4 +12,13 @@
   color: black;
   margin: 0 auto;
   width: 75%;
+
+  @media only screen and (max-width: $bp-largest) {
+    width: 90%;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    width: 100%;
+    margin: 2rem auto;
+  }
 }
