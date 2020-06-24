@@ -6,7 +6,7 @@ categories: ["Explainer",]
 tags: [ "JavaScript",]
 draft: false
 subtitle: "ECMAScript, var, const, let, and why there are so many different verisons of JavaScript."
-last_update: 2020-06-29
+# last_update: 2020-06-29
 ---
 
 If you are learning JavaScript, you might not be aware that there are multiple versions of the language. That may not seem like a big deal. After all, almost everything on computers is versioned. Maybe you are used to applications updating automatically. Your computer and phone update to new versions all the time and not much seems to change, right?
