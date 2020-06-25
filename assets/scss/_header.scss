@@ -1,31 +1,33 @@
-.header {
-  &__logo {
-    font-size: 4rem;
-    text-decoration: none;
-    color: $color-highlight-1;
-    letter-spacing: 4px;
+.logo {
+  &__image {
+    height: auto;
+    width: 10rem;
+    margin-right: 2rem;
+    transition: all 0.2s;
 
     @media only screen and (max-width: $bp-large) {
-      font-size: 5rem;
-    }
-
-    @media only screen and (max-width: $bp-medium) {
-      font-size: 4rem;
+      margin-right: 0;
     }
 
     @media only screen and (max-width: $bp-small) {
-      font-size: 3rem;
+      width: 8.5rem;
     }
 
     @media only screen and (max-width: $bp-xsmall) {
-      font-size: 3rem;
-      letter-spacing: 0;
-      text-align: center;
-      line-height: 1;
-      padding-bottom: 1rem;
+      width: 7rem;
     }
   }
 
+  &__image:hover {
+    transform: scale(1.1);
+  }
+
+  &__image:active {
+    transform: scale(1.1) translateY(5px);
+  }
+}
+
+.header {
   &__nav {
     display: flex;
     font-size: 2rem;
