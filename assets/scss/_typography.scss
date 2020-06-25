@@ -229,3 +229,9 @@ section .footnotes {
     display: inline;
   }
 }
+
+sup[id^='fnref'] {
+  padding: 1px;
+  color: $color-highlight-1;
+  font-weight: bold;
+}
