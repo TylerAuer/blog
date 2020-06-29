@@ -1,5 +1,5 @@
 ---
-title: "Versions of Javascript"
+title: "Versions of JavaScript"
 date: 2020-06-23T09:18:55-07:00
 author: "Tyler Auer"
 categories: ["Explainer",]
