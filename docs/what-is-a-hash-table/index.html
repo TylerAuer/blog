@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="stylesheet" href="https://blog.tylerauer.com/scss/main.min.8d0020bb9d4ab747a25eaad913be5f95c5eeb61a34f0aaaa5594c2d61a19d9aa.css" integrity="sha256-jQAgu51Kt0eiXqrZE75flcXutho08KqqVZTC1hoZ2ao=" media="screen">
+
+  
+  <title>
+    
+    What Is a Hash? - Mountains of Code - Tyler Auer
+    
+  </title>
+
+  
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta name="description"
+    content='What are hashes, hashing functions, and hash maps? And, why do programmers use them?'>
+  <meta name="robots" content="index, follow">
+</head>
+
+<body>
+  <div class="container">
+
+    <br>
+    <header class="header">
+      <div class="logo">
+        <a href="/" class="logo__image-link">
+          <img class="logo__image" src="/img/logo-no-text@200x-100.jpg" alt="Mountains of Code Logo">
+        </a>
+      </div>
+
+
+      <nav class="header__nav">
+        <a href="/tags" class='header__link '>
+          Tech
+        </a>
+        <a href="/categories" class='header__link '>
+          Categories
+        </a>
+        <a href="https://tylerauer.com" class="header__link header__link--me">Me</a>
+      </nav>
+    </header>
+
+    <main>
+      
+
+<section class="title-section">
+     <h1 class="title__title">What Is a Hash?</h1>
+
+     
+          <div class="title__dateline">
+               <div class="title__date">June 28, 2020</div>
+          </div>
+          
+</section>
+<section class="content-body">
+
+     
+     <div><p>When I first started coding, I saw the term &ldquo;hash&rdquo; frequently but never really understood what it was referring to. I certainly had never implemented one and wasn&rsquo;t even sure if I had used one. Googling &ldquo;hash&rdquo; didn&rsquo;t get me any explanations I could wrap my head around either. But, now that I&rsquo;ve learned a bit more, I&rsquo;d like to try to provide the explanation that beginner me was always looking for.</p>
+<h2 id="youve-hashed-before">You&rsquo;ve Hashed Before!</h2>
+<p>Chances are you&rsquo;ve used a hash map before because <a href="https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(associative_array)">your programming language of choice</a> offers one as part of its standard library, and because hash maps are incredibly useful. In JavaScript, for example, <code>objects</code> are hash maps<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. Python calls their implementation a <code>dictionary</code>. You can recognize them by their key-value pairs:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// a JavaScript object
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">const</span> aHashMap <span style="color:#ff79c6">=</span> {
+  heightInInches<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">73</span>,
+  weightInPounds<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">200</span>,
+  ageInYears<span style="color:#ff79c6">:</span> <span style="color:#bd93f9">35</span>
+}
+</code></pre></div>
+<p>Hash Maps are great to use in your code because they make it easy to access data. If I need a value, I can just reference its key (ex: <code>aHashMap.heightInInches</code>). My code editor will also recognize what I am typing and use autocomplete to help me.</p>
+<p>That convenience for you as the coder also happens to be great for the computer. Behind the scenes, hash maps are really efficient, especially for looking up (searching) for values. Let&rsquo;s look at how they are built to understand why.</p>
+<h2 id="a-hash-is-used-to-make-a-hash-map">A Hash is used to make a Hash Map</h2>
+<p>A confusing feature of this concept is that <strong>hash</strong> and <strong>hash map</strong> (or sometimes hash table, hashing, &hellip;) are used somewhat interchangeably, and it&rsquo;s hard to know what is what.</p>
+<p>A hash is a function that takes an input string and outputs an integer. In other words, you give it some text and it spits out a number. Importantly, if you give it the same text it <em>ALWAYS</em> returns the same number, meaning the same input always turns into the same output.</p>
+<p>A simple hash function might convert characters to their <a href="https://en.wikipedia.org/wiki/ASCII">ASCII</a> values, like so:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// This isn&#39;t a real function in JS, I just made it up as an example
+</span><span style="color:#6272a4"></span>hashing_function(<span style="color:#f1fa8c">&#39;helloworld&#39;</span>); <span style="color:#6272a4">// returns: 104101108108111119111114108100
+</span></code></pre></div>
+<p>The output of the <strong>hash function</strong> is then used as an index for an array. That system, where an input goes into a hash function and provides a reference for where to find data in an array, is what is known as a <strong>hash map</strong>.</p>
+<p>Wait, did you catch that I suddenly said array? Yeah, hash maps store data in arrays. But, their trick is to use the integer that comes out of the hashing function as the index (the position or address) of the associated value in the array.</p>
+<p>Why does this matter? Well, it makes looking up values in the array much faster. Let&rsquo;s look at an array of key-value pairs stored in nested subarrays without hash mapping:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#ff79c6">const</span> arrOfKeyValuePairs <span style="color:#ff79c6">=</span> [
+  [heightInInches, <span style="color:#bd93f9">73</span>],
+  [weightInPounds, <span style="color:#bd93f9">20</span>],
+  [ageInYears, <span style="color:#bd93f9">35</span>]
+  <span style="color:#6272a4">// imagine many many many more key-value pairs
+</span><span style="color:#6272a4"></span>  <span style="color:#6272a4">// ...
+</span><span style="color:#6272a4"></span>  <span style="color:#6272a4">// ...
+</span><span style="color:#6272a4"></span>]
+</code></pre></div><p>If I wanted to search for <code>ageInYears</code> in this array, I would need to go one-by-one through every single key-value pair until one matched. If the item I need is in the last position I check (say <code>[dataOfDeath, 07042076</code>), then I would need to traverse the whole array to find it. That&rsquo;s slow!</p>
+<p>Even if my array is sorted and I do a binary search,<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> I still will have to take multiple steps to find my value. Plus, I&rsquo;ll need to keep my array sorted, which takes work too.</p>
+<p>With a hash map, the hashing function is a guide<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> that tells me exactly where the value I want is located in the array. I shove my key into the hashing function and it tells me exactly which index has the data I want. No need to look anywhere else!</p>
+<h2 id="a-few-more-optional-details">A Few More (Optional) Details</h2>
+<p>If you are wondering how long this array would need to be to handle <em><strong>HUGE</strong></em> indexes like in my ASCII example, well you&rsquo;ve unearthed another layer of complexity. Since arrays take up space in memory, we certainly can&rsquo;t be occupying 104,101,108,108,111,119,111,114,108,100 spots just waiting for one or two to be filled with data.</p>
+<p>Instead, a prediction is made about the size of the array that will be needed and then the array&rsquo;s length is used with modulo to ensure the index is actually within the array&rsquo;s length. An example will help here:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#6272a4">// Returns the number of characters in the input string
+</span><span style="color:#6272a4"></span><span style="color:#8be9fd;font-style:italic">function</span> hash(inputString) {
+  <span style="color:#ff79c6">return</span> inputString.length
+}
+
+<span style="color:#ff79c6">const</span> anArrayWith3PositionsForTheHashMap <span style="color:#ff79c6">=</span> [ , , ]
+
+<span style="color:#6272a4">// hash(&#39;Hello&#39;) returns 5 which would then be
+</span><span style="color:#6272a4">// divided by 3 (the length of the array).
+</span><span style="color:#6272a4">// The remainder, 2, is then the index for the data
+</span><span style="color:#6272a4"></span>hash(<span style="color:#f1fa8c">&#39;Hello&#39;</span>) <span style="color:#6272a4">// 5 --&gt; 5 % 3 --&gt; 2
+</span><span style="color:#6272a4"></span>hash(<span style="color:#f1fa8c">&#39;See you!!!&#39;</span>) <span style="color:#6272a4">// 10 --&gt; 10 % 3 --&gt; 1
+</span><span style="color:#6272a4"></span>hash(<span style="color:#f1fa8c">&#39;A longer input!&#39;</span>) <span style="color:#6272a4">// 15 --&gt; 15 % 3 --&gt; 0
+</span></code></pre></div><p>Since the array for the hash map has three positions, we compute mod 3 (<code>%</code> in many languages) to identify the index for the data. If it turns out that our array is too short, then we make it larger, change the mod and recalculate the indexes. But, importantly, the result of our hashing function does not change. Just the mod we are using to adjust it.</p>
+<p>But, this doesn&rsquo;t always work out so nicely. You may have noticed that I chose my values carefully in the above example. After using modulo, I got three unique indexes. That&rsquo;s not guaranteed. In fact, if the length of my array had been 5 instead of 3, then 5, 10, and 15 mod 5 would all return 0. Disaster!</p>
+<p>This is known as a collision. It&rsquo;s not actually a disaster; we can just store multiple values at that index. But, it does slow down our hash map, so we want to avoid it.</p>
+<p>Building good hash maps is about balancing array size, hashing function complexity, and a host of other things. Lots of people with lots of PhDs work on optimizing these concerns, so we don&rsquo;t have to worry about them.</p>
+<h2 id="hash-functions-are-also-used-to-protect-your-passwords">Hash Functions are also used to Protect Your Passwords</h2>
+<p>Hashing functions are also really useful for storing passwords. When you create an account with a website you supply a password which the company stores on their server. When you return to the site, you send them your password and they check that the password you sent matches the one on their servers. The problem with this is that if a hacker breaks into their server they now have every user&rsquo;s username and password combination. A hash function can provide an added layer of protection.</p>
+<p>Instead of storing your actual password, sites encode the password using a secret hashing function. Then when you try to login, they run the password you send through the same hash function and see if the outputs match. Then they never need to know or even store your actual password.</p>
+<p>This method is secure because hash functions can be designed to be one way. Meaning, it&rsquo;s easy to provide an input and get an output, but hard to start with the output and derive the input like a hacker would need to do if they stole the hashed version of your password.<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>How hard a hash function is to reverse makes a big difference. If one is easy to crack, then users don&rsquo;t have time to change their passwords and protect their accounts. But, if it takes a while, the company can alert their users of the breach and encourage them to change their passwords.<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>If you want to read more, <a href="https://www.wired.com/2016/06/hacker-lexicon-password-hashing/">this article</a> from Wired is great!</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>This may not be 100% accurate, but it is true enough for our purposes here. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>A binary search is a divide and conquer algorithm. You pick a value in the middle and use it to determine if the value you are looking for is to the left or right (smaller or larger). That eliminates half of the possible places you&rsquo;d need to check. Doing this recursively finds a value in logarithmic time. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Or, dare I say, a map? <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>A non-reversible function may seem hard to pull off, but you&rsquo;ve definitely run into functions like this before. Exponentiation, for example, isn&rsquo;t reversible. If you have a function, <em>f(x)</em> = <em>x</em><sup>2</sup>, and know that the output is 9, then what is the input? You can&rsquo;t be sure. Maybe it was 3. Or, maybe it was -3. So, that function is not reversible. Of course, it&rsquo;s easy for a black hat to try both of the possible values. So you&rsquo;d need a better hash than this, but you at least get a taste of the methods. And, yes, this blog is written by a former math teacher. <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>Most won&rsquo;t. And, since so many people use the same passwords at multiple sites, the hackers then can log into every account with that login-password combination. <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div>
+</section>
+
+
+    </main>
+
+
+    <footer class="footer">
+
+      <div class="footer__text">
+        <a href="#" class="footer__logo">
+          MOUNTAINS of CODE
+        </a>
+        <div class="footer__copy">
+          Custom built by Tyler Auer with <a href="https://gohugo.io/" class="footer__hugo-link">Hugo</a> &copy; 2020.
+        </div>
+      </div>
+
+      <div class="footer__social">
+
+        <a href="https://twitter.com/TylerAuer">
+          <div class="footer__icon-box">
+            <svg class="footer__icon">
+              <use xlink:href="/img/social-sprites.svg#twitter" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/tyler-auer-903b481a1/">
+          <div class="footer__icon-box">
+            <svg class="footer__icon">
+              <use xlink:href="/img/social-sprites.svg#linkedin" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://tylerauer.com/">
+          <div class="footer__icon-box">
+            <svg class="footer__icon">
+              <use xlink:href="/img/social-sprites.svg#home-icon-silhouette" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="https://github.com/TylerAuer">
+          <div class="footer__icon-box">
+            <svg class="footer__icon">
+              <use xlink:href="/img/social-sprites.svg#github" />
+            </svg>
+          </div>
+        </a>
+
+        <a href="mailto:tyler.auer&#64;gmail.com">
+          <div class="footer__icon-box">
+            <svg class="footer__icon">
+              <use xlink:href="/img/social-sprites.svg#email" />
+            </svg>
+          </div>
+        </a>
+
+      </div>
+    </footer>
+  </div>
+  <script> </script>
+</body>
+
+</html>
