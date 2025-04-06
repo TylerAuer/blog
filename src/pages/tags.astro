@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/base.astro'
+
+const allPosts = Object.values(
+  import.meta.glob('./posts/*.md', { eager: true })
+)
+const tags = [
+  ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
+]
+
+const pageTitle = 'Tags'
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div>
+    <h1>Tags</h1>
+    {
+      tags.map((tag) => (
+        <p>
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </p>
+      ))
+    }
+  </div>
+</BaseLayout>
