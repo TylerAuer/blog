@@ -17,6 +17,28 @@ export const H6 = (props: { children: React.ReactNode }) => (
   <_H level={6} {...props} />
 )
 
+export const P = (props: { children: React.ReactNode }) => (
+  <p className="text-base text-gray-700 py-2">
+    {props.children}
+  </p>
+)
+
+export const A = (props: {
+  children: React.ReactNode
+  href: string
+  target?: string
+  rel?: string
+}) => (
+  <a
+    className="text-blue-600 hover:text-blue-800 underline"
+    href={props.href}
+    target={props.target}
+    rel={props.rel}
+  >
+    {props.children}
+  </a>
+)
+
 function _H(props: {
   children: React.ReactNode
   level: 1 | 2 | 3 | 4 | 5 | 6
